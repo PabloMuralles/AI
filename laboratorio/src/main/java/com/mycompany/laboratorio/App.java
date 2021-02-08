@@ -1,5 +1,6 @@
 package com.mycompany.laboratorio;
 
+import graph.BFS;
 import graph.Node;
  
 
@@ -11,15 +12,24 @@ public class App
 {
     public static void main( String[] args )
     {
-        Node<String> node1 = new Node<>("hola");
+       
+        var zona1 = new Node<Integer>(1);
+        var zona2 = new Node<Integer>(2);
+        var zona5 = new Node<Integer>(5);
+        var zona4 = new Node<Integer>(4);
+        var zona10 = new Node<Integer>(10);
+        var zona15 = new Node<Integer>(15);
+        var zona16 = new Node<Integer>(16);
         
-        Node<Integer> node2 = new Node<>(5);
+        zona1.connect(zona2);
+        zona1.connect(zona5);
+        zona1.connect(zona4);
+        zona5.connect(zona4);
+        zona4.connect(zona10);
+        zona10.connect(zona15);
+        zona15.connect(zona16);
         
-        var node3 = new Node<Boolean>(true);
-        
-        System.out.println(node1);
-        System.out.println(node2);
-        
+        BFS.search(16,zona2);
         
     }
 }
