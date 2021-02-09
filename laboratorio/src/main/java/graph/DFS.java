@@ -5,12 +5,8 @@
  */
 package graph;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Optional;
-import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
@@ -22,31 +18,22 @@ public class DFS {
     
     public static<T>  Optional<Node<T>> search(T value, Node<T> start){
         
-        Stack<Node<T>> queue = new Stack<>();
-        queue.add(start);
-        
-        Node<T> currentNode=queue.pop();
+        Stack<Node<T>> stack = new Stack<>();
+        stack.push(start);
         
         Set<Node<T>> closed = new HashSet<>();
         
-        closed.add(currentNode); 
-        queue.addAll(currentNode.getNeighbors()); 
-        
-        var father = currentNode.toString();
-        var flag = false;
+        var same = false;
         
         Stack<String> routes = new Stack<>();
         Stack<Node<T>> successors = new Stack<>();
         Stack<String> temp = new Stack<>();
+        routes.push(start.toString());
         
- 
-        routes.push(father+"->"+currentNode.getValue());
-     
-        
-        while(!queue.isEmpty()){//1- verifico si se puede continuar
+        while(!stack.isEmpty()){//1- verifico si se puede continuar
             
-            currentNode = queue.pop();
-            father = routes.pop();
+            var currentNode = stack.pop();
+            var father = routes.pop();
             
             // 2- verifico si se encuentra en la metra
             if(currentNode.getValue().equals(value)){
@@ -54,27 +41,27 @@ public class DFS {
                 return Optional.of(currentNode);
             }else{
                 closed.add(currentNode);//3- espacio explorado
-                queue.addAll(currentNode.getNeighbors());//-4 funcion sucesora
+                stack.addAll(currentNode.getNeighbors());//-4 funcion sucesora
                 successors.addAll(currentNode.getNeighbors());
-                queue.removeAll(closed);
+                stack.removeAll(closed);
                 for(Node<T> node: successors){
                     routes.add(father+"->"+node.getValue());
                 }
                 successors=new Stack<>();
-                flag = false;
+                same = false;
                 for(String route: routes){
                     var splitRoute = route.split("->");
                     var lenghtRoute = Integer.valueOf(splitRoute[splitRoute.length-1]);
                     for(Node<T> close: closed){
                         var data = close.getValue();
                         if (data.equals((lenghtRoute))) {
-                            flag = true;
+                            same = true;
                         }   
                     }
-                    if (!flag) {
+                    if (!same) {
                         temp.add(route);
                     }else{
-                        flag = false;
+                        same = false;
                     }
                 }
                 routes=temp;
