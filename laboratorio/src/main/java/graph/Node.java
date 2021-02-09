@@ -16,6 +16,7 @@ import java.util.Set;
 public class Node<T> {
     private T value;
     private Set<Node<T>> neighbors;
+    private boolean visited;
     
     public Node(T value){
         this.value = value;
@@ -40,5 +41,13 @@ public class Node<T> {
     
     public String toString(){
         return this.value.toString();
+    }
+    
+    public boolean getVisited(){
+        return this.visited;
+    }
+    
+    public void setVisited(boolean visited){
+        this.visited = visited;
     }
 }
