@@ -50,9 +50,9 @@ public class App
         BFS.search(16,zona21);
         System.out.println("\n");
         System.out.println("BFS Version 2");
-        BFSVersion2.search(16, zona21);
+        BFSVersion2.search(16,zona21);
         System.out.println("\n");
         System.out.println("DFS");
-        DFS.search(16, zona21);
+        DFS.search(16,zona21);
     }
 }
