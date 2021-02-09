@@ -19,7 +19,7 @@ import java.util.Set;
  */
 public class GraphSearchBFS {
     
-             public static<T>  Optional<Node<T>> search(T value, Node<T> start){
+        public static<T>  Optional<Node<T>> search(T value, Node<T> start){
         
         Queue<Node<T>> queue = new ArrayDeque<>();
         queue.add(start);
@@ -72,34 +72,37 @@ public class GraphSearchBFS {
                 return Optional.of(currentNode);
             }else{
                if (!closed.contains(currentNode)) {
-                    closed.add(currentNode);//3- espacio explorado
-                    queue.addAll(currentNode.getNeighbors());//-4 funcion sucesora
-                }
-                 
-                successors.addAll(currentNode.getNeighbors());
-                //queue.removeAll(closed);
-                for(Node<T> node: successors){
-                    routes.add(father+"->"+node.getValue());
-                }
-                successors=new ArrayList<>();
-                same = false;
-                for(String route: routes){
-                    var splitRoute = route.split("->");
-                    var lenghtRoute = Integer.valueOf(splitRoute[splitRoute.length-1]);
-                    for(Node<T> close: closed){
-                        var data = close.getValue();
-                        if (data.equals((lenghtRoute))) {
-                            same = true;
-                        }   
+                        closed.add(currentNode);//3- espacio explorado
+                        queue.addAll(currentNode.getNeighbors());//-4 funcion sucesora
+
+
+                    successors.addAll(currentNode.getNeighbors());
+                    //queue.removeAll(closed);
+                    for(Node<T> node: successors){
+                        routes.add(father+"->"+node.getValue());
                     }
-                    if (!same) {
-                        temp.add(route);
-                    }else{
-                        same = false;
+                    successors=new ArrayList<>();
+                    same = false;
+                    for(String route: routes){
+                        var splitRoute = route.split("->");
+                        var lenghtRoute = Integer.valueOf(splitRoute[splitRoute.length-1]);
+                        for(Node<T> close: closed){
+                            var data = close.getValue();
+                            if (data.equals((lenghtRoute))) {
+                                same = true;
+                            }   
+                        }
+                        if (!same) {
+                            temp.add(route);
+                        }else{
+                            same = false;
+                        }
                     }
-                }
-                routes=temp;
-                temp=new ArrayList<>();
+                    routes=temp;
+                    temp=new ArrayList<>();
+                }else{
+                   queue.removeAll(closed);
+               }
             }
         }
         

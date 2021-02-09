@@ -1,7 +1,9 @@
 package com.mycompany.laboratorio;
 
 import graph.BFS;
+import graph.DFS;
 import graph.Node;
+import graph.GraphSearchBFS;
  
 
 /**
@@ -44,7 +46,8 @@ public class App
        zona15.connect(zona16);
         
         
-        BFS.search(16,zona21);
+        //BFS.search(16,zona21);
+        DFS.search(16, zona21);
         
     }
 }

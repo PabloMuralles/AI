@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  *
@@ -19,12 +20,12 @@ import java.util.Set;
  */
 public class DFS {
     
-    public static<T>  Optional<Node<T>> searchDFS(T value, Node<T> start, int l){
+    public static<T>  Optional<Node<T>> search(T value, Node<T> start){
         
-        Queue<Node<T>> queue = new ArrayDeque<>();
+        Stack<Node<T>> queue = new Stack<>();
         queue.add(start);
         
-        Node<T> currentNode=queue.remove();
+        Node<T> currentNode=queue.pop();
         
         Set<Node<T>> closed = new HashSet<>();
         
@@ -34,36 +35,18 @@ public class DFS {
         var father = currentNode.toString();
         var flag = false;
         
-        List<String> routes = new ArrayList<>();
-        List<Node<T>> successors = new ArrayList<>();
-        List<String> temp = new ArrayList<>();
+        Stack<String> routes = new Stack<>();
+        Stack<Node<T>> successors = new Stack<>();
+        Stack<String> temp = new Stack<>();
         
-        for(Node<T> node : queue){
-            routes.add(father+"->"+node.getValue());
-        }
-        
-        for(String route: routes){
-            var splitRoute = route.split("->");
-            var lenghtRoute = Integer.valueOf(splitRoute[splitRoute.length-1]);
-            for(Node<T> close: closed){
-                var data = close.getValue();
-                if (data.equals((lenghtRoute))) {
-                    flag = true;
-                }
-            }
-            if (!flag) {
-                temp.add(route);
-            }else{
-                flag = false;
-            }
-        }
-        routes = temp;
-        temp = new ArrayList<>();
+ 
+        routes.push(father+"->"+currentNode.getValue());
+     
         
         while(!queue.isEmpty()){//1- verifico si se puede continuar
             
-            currentNode = queue.remove();
-            father = routes.remove(0);
+            currentNode = queue.pop();
+            father = routes.pop();
             
             // 2- verifico si se encuentra en la metra
             if(currentNode.getValue().equals(value)){
@@ -77,7 +60,7 @@ public class DFS {
                 for(Node<T> node: successors){
                     routes.add(father+"->"+node.getValue());
                 }
-                successors=new ArrayList<>();
+                successors=new Stack<>();
                 flag = false;
                 for(String route: routes){
                     var splitRoute = route.split("->");
@@ -95,7 +78,7 @@ public class DFS {
                     }
                 }
                 routes=temp;
-                temp=new ArrayList<>();
+                temp=new Stack<>();
             }
         }
         
