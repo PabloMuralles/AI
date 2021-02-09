@@ -27,20 +27,21 @@ public class App
         var zona21 = new Node<Integer>(21);
         
         
-        zona21.connect(zona12);
-        zona12.connect(zona13);
-        zona13.connect(zona9);
-        zona13.connect(zona14);
-        zona14.connect(zona10);
-        zona10.connect(zona9);
-        zona10.connect(zona15);
-        zona10.connect(zona16);
-        zona9.connect(zona4);
-        zona9.connect(zona1);
-        zona4.connect(zona5);
-        zona4.connect(zona1);
-        zona1.connect(zona5);
-        zona1.connect(zona2);
+       zona1.connect(zona2);
+       zona1.connect(zona4);
+       zona1.connect(zona5);
+       zona1.connect(zona9);
+       zona4.connect(zona5);
+       zona4.connect(zona9);
+       zona4.connect(zona10);
+       zona9.connect(zona10);
+       zona9.connect(zona13);
+       zona10.connect(zona14);
+       zona10.connect(zona15);
+       zona12.connect(zona13);
+       zona12.connect(zona21);
+       zona13.connect(zona14);
+       zona15.connect(zona16);
         
         
         BFS.search(16,zona21);

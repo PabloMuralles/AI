@@ -17,9 +17,9 @@ import java.util.Set;
  *
  * @author pablo
  */
-public class BFS {
+public class GraphSearchBFS {
     
-        public static<T>  Optional<Node<T>> search(T value, Node<T> start){
+        public static<T>  Optional<Node<T>> searchV2(T value, Node<T> start){
         
         Queue<Node<T>> queue = new ArrayDeque<>();
         queue.add(start);
@@ -32,7 +32,7 @@ public class BFS {
         queue.addAll(currentNode.getNeighbors()); 
         
         var father = currentNode.toString();
-        var same = false;
+        var flag = false;
         
         List<String> routes = new ArrayList<>();
         List<Node<T>> successors = new ArrayList<>();
@@ -48,13 +48,13 @@ public class BFS {
             for(Node<T> close: closed){
                 var data = close.getValue();
                 if (data.equals((lenghtRoute))) {
-                    same = true;
+                    flag = true;
                 }
             }
-            if (!same) {
+            if (!flag) {
                 temp.add(route);
             }else{
-                same = false;
+                flag = false;
             }
         }
         routes = temp;
@@ -70,28 +70,31 @@ public class BFS {
                 System.out.println(father);
                 return Optional.of(currentNode);
             }else{
-                closed.add(currentNode);//3- espacio explorado
-                queue.addAll(currentNode.getNeighbors());//-4 funcion sucesora
+                if (!closed.contains(currentNode)) {
+                    closed.add(currentNode);//3- espacio explorado
+                    queue.addAll(currentNode.getNeighbors());//-4 funcion sucesora
+                }
+                 
                 successors.addAll(currentNode.getNeighbors());
-                queue.removeAll(closed);
+                //queue.removeAll(closed);
                 for(Node<T> node: successors){
                     routes.add(father+"->"+node.getValue());
                 }
                 successors=new ArrayList<>();
-                same = false;
+                flag = false;
                 for(String route: routes){
                     var splitRoute = route.split("->");
                     var lenghtRoute = Integer.valueOf(splitRoute[splitRoute.length-1]);
                     for(Node<T> close: closed){
                         var data = close.getValue();
                         if (data.equals((lenghtRoute))) {
-                            same = true;
+                            flag = true;
                         }   
                     }
-                    if (!same) {
+                    if (!flag) {
                         temp.add(route);
                     }else{
-                        same = false;
+                        flag = false;
                     }
                 }
                 routes=temp;
