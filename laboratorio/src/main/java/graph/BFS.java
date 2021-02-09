@@ -17,14 +17,14 @@ import java.util.Set;
  */
 public class BFS {
     
-    public static<T>  Optional<Node<T>> search(T value, Node<T> start){
+        public static<T>  Optional<Node<T>> search(T value, Node<T> start){
         
         Queue<Node<T>> queue = new ArrayDeque<>();
         queue.add(start);
         
         Node<T> currentNode;
         
-        Set<Node<T>> closed = new HashSet();
+        Set<Node<T>> closed = new HashSet<>();
         
         while(!queue.isEmpty()){//1- verifico si se puede continuar
             
