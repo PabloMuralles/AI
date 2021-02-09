@@ -27,6 +27,7 @@ public class App
         var zona15 = new Node<Integer>(15);
         var zona16 = new Node<Integer>(16);
         var zona21 = new Node<Integer>(21);
+        var zona18 = new Node<Integer>(18);
         
         
        zona1.connect(zona2);
@@ -44,7 +45,8 @@ public class App
        zona12.connect(zona13);
        zona12.connect(zona21);
        zona13.connect(zona14);
-       zona15.connect(zona16);
+       //zona15.connect(zona16);
+       
         
         System.out.println("BFS");
         BFS.search(16,zona21);

@@ -64,6 +64,7 @@ public class BFS {
         while(!queue.isEmpty()){//1- verifico si se puede continuar
             
             currentNode = queue.remove();
+            System.out.println("Visitando: "+currentNode.getValue());
             father = routes.remove(0);
             
             // 2- verifico si se encuentra en la metra
@@ -100,6 +101,7 @@ public class BFS {
             }
         }
         
+        System.out.println("No se encontro");
         return Optional.empty();
     }
 }

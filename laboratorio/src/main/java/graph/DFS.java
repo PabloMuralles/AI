@@ -33,6 +33,7 @@ public class DFS {
         while(!stack.isEmpty()){//1- verifico si se puede continuar
             
             var currentNode = stack.pop();
+            System.out.println("Visitando: "+currentNode.getValue());
             var father = routes.pop();
             
             // 2- verifico si se encuentra en la metra
@@ -69,6 +70,7 @@ public class DFS {
             }
         }
         
+        System.out.println("No se encontro");
         return Optional.empty();
     }
 }
