@@ -41,7 +41,7 @@ public class BFS {
         for(Node<T> node : queue){
             routes.add(father+"->"+node.getValue());
         }
-        //hola
+        
         
         for(String route: routes){
             var splitRoute = route.split("->");
