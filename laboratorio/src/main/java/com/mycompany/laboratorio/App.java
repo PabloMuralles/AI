@@ -3,7 +3,7 @@ package com.mycompany.laboratorio;
 import graph.BFS;
 import graph.DFS;
 import graph.Node;
-import graph.GraphSearchBFS;
+import graph.BFSVersion2;
  
 
 /**
@@ -45,9 +45,13 @@ public class App
        zona13.connect(zona14);
        zona15.connect(zona16);
         
-        
-        //BFS.search(16,zona21);
+        System.out.println("BFS\n");
+        BFS.search(16,zona21);
+        System.out.println("\n");
+        System.out.println("BFS Version 2\n");
+        BFSVersion2.search(16, zona21);
+        System.out.println("\n");
+        System.out.println("DFS\n");
         DFS.search(16, zona21);
-        
     }
 }

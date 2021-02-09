@@ -17,7 +17,7 @@ import java.util.Set;
  *
  * @author pablo
  */
-public class GraphSearchBFS {
+public class BFSVersion2 {
     
         public static<T>  Optional<Node<T>> search(T value, Node<T> start){
         
@@ -64,6 +64,7 @@ public class GraphSearchBFS {
         while(!queue.isEmpty()){//1- verifico si se puede continuar
             
             currentNode = queue.remove();
+           
             father = routes.remove(0);
             
             // 2- verifico si se encuentra en la metra
@@ -81,6 +82,7 @@ public class GraphSearchBFS {
                     for(Node<T> node: successors){
                         routes.add(father+"->"+node.getValue());
                     }
+                    queue.removeAll(closed);
                     successors=new ArrayList<>();
                     same = false;
                     for(String route: routes){
