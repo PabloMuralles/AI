@@ -102,9 +102,7 @@ public class BFSVersion2 {
                     }
                     routes=temp;
                     temp=new ArrayList<>();
-                }else{
-                   queue.removeAll(closed);
-               }
+                }
             }
         }
         
