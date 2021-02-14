@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.functional.MyFunctionalInterface;
+import org.example.functional.Pickachu;
 import org.example.functional.Tux;
 
 /**
@@ -24,18 +25,39 @@ public class App
         System.out.println(duke.doSomething("Clase anonima"));
     }
 
-    public static void doSomethingFunctional(){
+    public static void doSomethingFunctional() {
         //funcion anonima
+        // esto es un comportamiento
         MyFunctionalInterface clippy = (String param) -> {
-            return "Hola soy clippy y recibi "+param;
+            return "Hola soy clippy y recibi " + param;
         };
+        // esto es un comportamiento
+        MyFunctionalInterface wilbert = (p) -> "Hola soy Wilbert y recibi " + p;
 
-        System.out.println(clippy.doSomething("recibi un parametro funcional"));
+        /*doSomethingHighOrder(clippy);
+        doSomethingHighOrder(wilbert);
+        doSomethingHighOrder(x -> "Hola soy anonymus y recibi" + x);*/
+
+        /*Tux tux = new Tux();
+        //referenciar a codigo existente en otra clase siempre y cuando la funcion cumpla con la firma de la interfas funcinal ::
+        doSomethingHighOrder(tux::doSomething);*/
+
+        Pickachu pickachu = new Pickachu();
+        doSomethingHighOrder(pickachu::pika);
+        doSomethingHighOrder(pickachu::impactrueno);
+
+    }
+
+    //funcion high order que recibe un comportamieto
+    public static void doSomethingHighOrder(MyFunctionalInterface comportamiento){
+        // Ejecuto el comportamiento que recibi como comportamiento
+
+        String respuesta = comportamiento.doSomething("Java 11 es genial");
+        System.out.println(respuesta);
     }
     public static void main( String[] args )
     {
-        doSomethingTraditional();
-        doSomethingClassy();
         doSomethingFunctional();
+
     }
 }
