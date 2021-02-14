@@ -9,9 +9,12 @@ import org.example.functional.Tux;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        //clase anonima
+    public static void  doSomethingTraditional(){
+        Tux tux = new Tux();
+        System.out.println(tux.doSomething("Holi"));
+    }
+
+    public static void doSomethingClassy(){
         MyFunctionalInterface duke = new MyFunctionalInterface() {
             @Override
             public String doSomething(String param) {
@@ -19,5 +22,10 @@ public class App
             }
         };
         System.out.println(duke.doSomething("Clase anonima"));
+    }
+    public static void main( String[] args )
+    {
+        doSomethingTraditional();
+        doSomethingClassy();
     }
 }
