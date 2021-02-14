@@ -23,9 +23,19 @@ public class App
         };
         System.out.println(duke.doSomething("Clase anonima"));
     }
+
+    public static void doSomethingFunctional(){
+        //funcion anonima
+        MyFunctionalInterface clippy = (String param) -> {
+            return "Hola soy clippy y recibi "+param;
+        };
+
+        System.out.println(clippy.doSomething("recibi un parametro funcional"));
+    }
     public static void main( String[] args )
     {
         doSomethingTraditional();
         doSomethingClassy();
+        doSomethingFunctional();
     }
 }
