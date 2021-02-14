@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.functional.MyFunctionalInterface;
 import org.example.functional.Tux;
 
 /**
@@ -10,8 +11,13 @@ public class App
 {
     public static void main( String[] args )
     {
-        Tux instanciaTux = new Tux();
-        System.out.println( instanciaTux.doSomething("Que divertida es la prgra funcional"));
-
+        //clase anonima
+        MyFunctionalInterface duke = new MyFunctionalInterface() {
+            @Override
+            public String doSomething(String param) {
+                return  "Hola soy duke y recibi "+ param;
+            }
+        };
+        System.out.println(duke.doSomething("Clase anonima"));
     }
 }
