@@ -4,6 +4,8 @@ import org.example.functional.MyFunctionalInterface;
 import org.example.functional.Pickachu;
 import org.example.functional.Tux;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -57,7 +59,21 @@ public class App
     }
     public static void main( String[] args )
     {
-        doSomethingFunctional();
+        //doSomethingFunctional();
+
+        List jedis = List.of("Yoda","Windu","Anakin", "Luke","Rey");
+
+        //poo
+        /*for (int i=0; i<jedis.size(); i++){
+            Object jedi = jedis.get(i);
+            System.out.println(jedi);
+        }*/
+
+        //jedis.forEach(param -> System.out.println(param));
+
+        //funcion high order que es forEach esto ya es programacion funcional
+        jedis.forEach(System.out::println);
+
 
     }
 }
