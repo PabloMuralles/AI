@@ -55,24 +55,21 @@ public class StreamsDemo {
 
     public static BigInteger Fibonacci(int number){
 
-        return nFibonacci = Stream.iterate(new BigInteger[]{BigInteger.ONE, BigInteger.ONE},
+        return Stream.iterate(new BigInteger[]{BigInteger.ONE, BigInteger.ONE},
                 p -> new BigInteger[]{p[1], p[0].add(p[1])})
                 .limit(number)
                 .skip(number - 1)
                 .findFirst()
                 .get()[0];
-
-
-
     }
 
 
-    public static  void main( String args[]){1
+    public static  void main( String args[]){
 
         Scanner in = new Scanner(System.in);
         System.out.println("Ingrese el numero para el calculo de la serie Fibonacci");
         var s = in.nextLine();
-        Fibonacci(Integer.parseInt(s));
+        System.out.println("El resultado de la susesion de fibonacci del numero "+s+" es :"+Fibonacci(Integer.parseInt(s)).toString());
         /*System.out.println("Calculando aleatorio");
 
         var listadoPrimos = createRandomList(Integer.valueOf(args[0])).parallelStream()
