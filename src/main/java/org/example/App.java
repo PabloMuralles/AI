@@ -4,8 +4,10 @@ import org.example.functional.MyFunctionalInterface;
 import org.example.functional.Pickachu;
 import org.example.functional.Tux;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
+
 
 /**
  * Hello world!
@@ -62,15 +64,41 @@ public class App
     {
         //doSomethingFunctional();
 
-        List jedis = new ArrayList();
-        jedis.add("Rey");
-        jedis.add("Luke");
-        jedis.add("Leia");
-        jedis.add("Anakin");
+        List jedis = List.of("Anakin","Leia","Luke","Rey");
 
-        jedis.removeIf(s -> s.equals("Rey"));
 
-        System.out.println(jedis);
 
+        var filteredJedis = jedis.stream()
+                .filter(s -> !s.equals("Rey"))//operacion map
+                .map(j -> j.toString().toUpperCase())//operacion map
+                .collect(Collectors.toList()); //operacion reduce
+
+        System.out.println(filteredJedis);
+        System.out.println("\n");
+
+
+        var theJedi = jedis.stream()
+                .peek(System.out::println)
+                .filter(s -> !s.equals("Rey"))//operacion map
+                .peek(System.out::println)
+                .map(j -> j.toString().toUpperCase())//operacion map
+                .peek(System.out::println)
+                .findFirst(); //operacion reduce
+
+
+        System.out.println("Resultado --> "+theJedi.get());
+        System.out.println("\n");
+
+
+        var theJedis = jedis.stream()
+                .peek(System.out::println)
+                .filter(s -> !s.equals("Rey"))//operacion map
+                .peek(System.out::println)
+                .map(j -> j.toString().toUpperCase())//operacion map
+                .peek(System.out::println)
+                .collect(Collectors.toList()); //operacion reduce
+
+
+        System.out.println("Resultado --> "+theJedis);
     }
 }
