@@ -1,8 +1,10 @@
 package org.example.functional;
 
+import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamsDemo {
 
@@ -51,20 +53,21 @@ public class StreamsDemo {
         return  counter <= 0;
     }
 
-    public static void Fibonacci(int number){
-       // Integer result = 0;
-        List<Integer> listNumbers = IntStream.range(2,number+1)
-                .mapToObj( i -> i).collect(Collectors.toList());
+    public static BigInteger Fibonacci(int number){
 
-        Integer tempSum=0;
-        var sum = listNumbers.stream().reduce(0,(x,y) -> (x+y));
-        sum+=1;
-         System.out.println(sum);
+        return nFibonacci = Stream.iterate(new BigInteger[]{BigInteger.ONE, BigInteger.ONE},
+                p -> new BigInteger[]{p[1], p[0].add(p[1])})
+                .limit(number)
+                .skip(number - 1)
+                .findFirst()
+                .get()[0];
+
+
 
     }
 
 
-    public static  void main( String args[]){
+    public static  void main( String args[]){1
 
         Scanner in = new Scanner(System.in);
         System.out.println("Ingrese el numero para el calculo de la serie Fibonacci");
