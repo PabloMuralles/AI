@@ -51,8 +51,25 @@ public class StreamsDemo {
         return  counter <= 0;
     }
 
+    public static void Fibonacci(int number){
+       // Integer result = 0;
+        List<Integer> listNumbers = IntStream.range(2,number+1)
+                .mapToObj( i -> i).collect(Collectors.toList());
+
+        Integer tempSum=0;
+        var sum = listNumbers.stream().reduce(0,(x,y) -> (x+y));
+        sum+=1;
+         System.out.println(sum);
+
+    }
+
+
     public static  void main( String args[]){
 
+        Scanner in = new Scanner(System.in);
+        System.out.println("Ingrese el numero para el calculo de la serie Fibonacci");
+        var s = in.nextLine();
+        Fibonacci(Integer.parseInt(s));
         /*System.out.println("Calculando aleatorio");
 
         var listadoPrimos = createRandomList(Integer.valueOf(args[0])).parallelStream()
