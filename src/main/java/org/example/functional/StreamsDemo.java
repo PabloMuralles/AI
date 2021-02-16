@@ -54,7 +54,7 @@ public class StreamsDemo {
     }
 
     public static BigInteger Fibonacci(int number){
-
+        number+=1;
         return Stream.iterate(new BigInteger[]{BigInteger.ONE, BigInteger.ONE},
                 p -> new BigInteger[]{p[1], p[0].add(p[1])})
                 .limit(number)
@@ -66,10 +66,49 @@ public class StreamsDemo {
 
     public static  void main( String args[]){
 
+        /*
+        // ejercicio 2
         Scanner in = new Scanner(System.in);
         System.out.println("Ingrese el numero para el calculo de la serie Fibonacci");
         var s = in.nextLine();
         System.out.println("El resultado de la susesion de fibonacci del numero "+s+" es :"+Fibonacci(Integer.parseInt(s)).toString());
+        */
+
+        //ejercicio 3
+        /*Scanner in2 = new Scanner(System.in);
+        System.out.println("Ingrese el numero para calcular");
+        var s2 = in2.nextLine();
+        var listadoPrimos = createRandomList(Integer.parseInt(s2)).stream()
+                .filter(n -> isPrimeNumber(n))
+                .sorted()
+                .collect(Collectors.toList());
+
+        var listadoFibonacci = listadoPrimos.stream()
+                .map(StreamsDemo::Fibonacci)
+                .collect(Collectors.toList());
+
+        System.out.println("Listas de los Numeros calculados");
+        System.out.println("Lista de primos: "+listadoPrimos);
+        System.out.println("Lista de primos calculos de fibonacci: " + listadoFibonacci);*/
+
+        // ejercico 4
+        Scanner in2 = new Scanner(System.in);
+        System.out.println("Ingrese el numero para calcular");
+        var s2 = in2.nextLine();
+        var listadoPrimos = createRandomList(Integer.parseInt(s2)).parallelStream()
+                .filter(n -> isPrimeNumber(n))
+                .sorted()
+                .collect(Collectors.toList());
+
+        var listadoFibonacci = listadoPrimos.parallelStream()
+                .map(StreamsDemo::Fibonacci)
+                .collect(Collectors.toList());
+
+        System.out.println("Listas de los Numeros calculados");
+        System.out.println("Lista de primos: "+listadoPrimos);
+        System.out.println("Lista de primos calculos de fibonacci: " + listadoFibonacci);
+
+        //Ejercicio 1 Codigo de los videos
         /*System.out.println("Calculando aleatorio");
 
         var listadoPrimos = createRandomList(Integer.valueOf(args[0])).parallelStream()
