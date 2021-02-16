@@ -66,13 +66,13 @@ public class StreamsDemo {
 
     public static  void main( String args[]){
 
-        /*
+
         // ejercicio 2
         Scanner in = new Scanner(System.in);
         System.out.println("Ingrese el numero para el calculo de la serie Fibonacci");
         var s = in.nextLine();
         System.out.println("El resultado de la susesion de fibonacci del numero "+s+" es :"+Fibonacci(Integer.parseInt(s)).toString());
-        */
+
 
         //ejercicio 3
         /*Scanner in2 = new Scanner(System.in);
