@@ -10,7 +10,7 @@ public class AustralianColoringConstraint extends Constraint<String,String>{
     public AustralianColoringConstraint(String place1,String place2){
         super(List.of(place1,place2));
         this.place1 = place1;
-        this.place2 = place1;
+        this.place2 = place2;
     }
 
 
@@ -22,6 +22,6 @@ public class AustralianColoringConstraint extends Constraint<String,String>{
             return true;
         }
         //lugar 1 <> lugar 2 -> distinto
-        return !assigment.get(place1).equals(place2);
+        return !assigment.get(place1).equals(assigment.get(place2));
     }
 }
