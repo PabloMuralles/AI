@@ -36,6 +36,8 @@ public class App
 
         var solution = problema.backtrack();
 
+
+
         System.out.println(solution);
 
 
