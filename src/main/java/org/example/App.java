@@ -37,8 +37,9 @@ public class App
         var solution = problema.backtrack();
 
 
+        //System.out.println(solution);
 
-        System.out.println(solution);
+        var objComplex = new ComplexConstraint();
 
 
     }
