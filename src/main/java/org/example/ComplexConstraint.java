@@ -85,7 +85,12 @@ public class ComplexConstraint {
 
         var solution = problem.backtrack();
 
-        System.out.println(solution);
+        if (solution!=null){
+            System.out.println(solution);
+        }else{
+            System.out.println("No posee solucion");
+        }
+
 
     }
 
