@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d08a6d5-df13-49c4-8f64-645f9d5ed9ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CalculadoraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CalculadoraTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/CalculadoraTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/CalculadoraTest.class" afterDir="false" />
     </list>
@@ -40,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="JUnit.CalculadoraTest">
+  <component name="RunManager" selected="JUnit.CalculadoraTest.probarTabla5">
     <configuration name="CalculadoraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo-junit5" />
       <extension name="coverage">
@@ -72,8 +71,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalculadoraTest.probarTabla5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo-junit5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CalculadoraTest" />
+      <option name="METHOD_NAME" value="probarTabla5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CalculadoraTest.probarTabla5" />
         <item itemvalue="JUnit.CalculadoraTest" />
         <item itemvalue="JUnit.CalculadoraTest.probarSuma" />
       </list>
