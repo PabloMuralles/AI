@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d08a6d5-df13-49c4-8f64-645f9d5ed9ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Calculadora.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CalculadoraTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo-junit5-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo-junit5-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.example.AppTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.example.AppTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CalculadoraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CalculadoraTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/CalculadoraTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/CalculadoraTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +40,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CalculadoraTest">
+    <configuration name="CalculadoraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo-junit5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CalculadoraTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CalculadoraTest.probarSuma" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo-junit5" />
       <extension name="coverage">
@@ -70,6 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CalculadoraTest" />
         <item itemvalue="JUnit.CalculadoraTest.probarSuma" />
       </list>
     </recent_temporary>
