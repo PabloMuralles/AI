@@ -50,6 +50,7 @@ public class CalculadoraTest {
     }
 
     @Test
+    @DisplayName("Prueba de tabla del 5")
     public void probarTabla5(){
         int[] numerbs = {1,2,3,4,5};
         assertAll("tabla del 5",
