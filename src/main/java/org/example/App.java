@@ -8,13 +8,7 @@ import java.util.ArrayList;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-
-        List list = new URLArrayList();
-
-        list.add(0,10);
-        list.add(0,5);
+    public static void main( String[] args ) {
+        System.out.println("Hello World!");
     }
 }
